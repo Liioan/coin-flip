@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    font-family: 'Righteous', cursive;
+}
+
+body{
+    background-color:  #698498;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.wrapper{
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side{
+    background-color: #dbcfab;;
+    border: 5px black solid;
+    box-shadow: 
+    15px 15px 0px -5px #cda777,
+    15px 15px 0px 0px black;
+    font-size: 3em;
+    text-align: center;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+button{
+    background-color: #dbcfab;;
+    border: 5px black solid;
+    box-shadow: 
+    15px 15px 0px -5px #cda777,
+    15px 15px 0px 0px black;
+    font-size: 1.5em;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+
+button:active{
+    background-color: #cda777;
+    transform: translate(5px, 8px);
+    box-shadow: 
+    10px 7px 0px -5px #5c4222,
+    10px 7px 0px 0px black;
+}
+
+.coin{
+    -webkit-text-stroke: darkgoldenrod 3px;
+    width: 100px;
+    height: 100px;
+    border: 5px darkgoldenrod solid;
+    border-radius: 100%;
+    background-color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: gold;
+    box-shadow:
+    0px 0px 0px 3px goldenrod,
+    10px 5px rgb(116, 86, 10),
+    10px 10px 10px 0px #354552;
+    transition: 3s;
+}
+
+.falling .coin{
+    position: absolute;
+}
+
+.falling{
+    animation: hole 1.5s;
+    background-color: black;
+    border: 3px solid #354552;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.falling i{
+    animation: falling 1s  .5s;
+}
+
+.new-coin{
+    animation: slide 3s;
+}
+
+.new-coin i{
+    animation: roll 3s;
+}
+
+@keyframes hole {
+    0%{
+        width: 0px;
+        height: 0px;
+    }
+
+    70%{
+        width: 300px;
+        height: 300px;
+    }
+
+    100%{
+        width: 0px;
+        height: 0px;
+    }
+}
+
+@keyframes falling {
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+        transform: rotate(20deg);
+        transform: scale(0);
+    }
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(-2000px);
+    }
+    
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes roll {
+    from{
+        transform: rotate(-360deg);
+    }
+
+    to{
+        transform: rotate(0);        
+    }
+}
+
+
+.hidden{
+    display: none;
+}
